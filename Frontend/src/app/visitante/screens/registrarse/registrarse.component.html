@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- imagen -->
+        <div class="col-md-12 col-lg-4 bg-dark">
+            <img src="https://external-preview.redd.it/wT1hh7m1MFII9_Bn2WydGGI-_BYz55QI7vi_JUatfkI.jpg?auto=webp&s=22da399338ae5db49cf345f4d85bd77174ac37e8"
+             alt="dogo test"
+             class="img-fluid img-fondo v-100 h-100">
+        </div>
+        <!-- seleccionar -->
+        <div class="col-md-12 col-lg-8 mb-5">
+            <h3 class="text-center">Registrarse</h3>
+            <!-- botones opcion -->
+            <div *ngIf="opcion==0"> 
+                <button (click)="volver()">Volver</button>
+
+                <div class="text-center my-5">
+                    <button (click)="changeSeleccion(ESTUDIANTE)">Estudiante</button>
+                </div>
+                <div class="text-center my-5">
+                    <button (click)="changeSeleccion(PUBLICADOR_TRABAJO)">Publicador oferta laboral</button>
+                </div>
+            </div>
+            <!-- reg estudiante -->
+            <div *ngIf="opcion==ESTUDIANTE" >
+                <button (click)="changeSeleccion(0)">Volver</button>
+                <app-reg-estudiante></app-reg-estudiante>
+            </div>
+            <!-- reg publicador oferta laboral -->
+            <div *ngIf="opcion==PUBLICADOR_TRABAJO" >
+                <button (click)="changeSeleccion(0)">Volver</button>
+                <app-reg-publicador-oferta-laboral></app-reg-publicador-oferta-laboral>
+            </div>
+
+        </div>
+    </div>
+</div>
