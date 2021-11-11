@@ -6,9 +6,6 @@ import { AppComponent } from './app.component';
 
 import { EstudianteModule } from './estudiante/estudiante.module';
 import { PublicadorOfertaModule} from './publicador-oferta/publicador-oferta.module';
-
-
-// import { VisitanteComponent } from './visitante/visitante.component';
 import { VisitanteModule } from './visitante/visitante.module';
 
 const MODULOS=[
@@ -24,12 +21,11 @@ const MODULOS=[
   imports: [
     BrowserModule,
     AppRoutingModule,
-    VisitanteModule,
-    PublicadorOfertaModule,
-    EstudianteModule
-    //...MODULOS
+
+    ...MODULOS
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

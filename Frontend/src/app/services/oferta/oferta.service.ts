@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CuentaEmpresa } from 'src/app/models/cuenta_empresa.model';
 import { dv_CardOferta } from 'src/app/models/dv_card_oferta.model';
+import { dv_OfertaActual } from 'src/app/models/dv_oferta_actual.model';
 import { nub_OfertaEmpresa } from 'src/app/models/nub_oferta_empresa_model';
 import { OfertaLaboral } from 'src/app/models/oferta_laboral.model';
 
@@ -59,6 +60,24 @@ export class OfertaService {
     if(final == null)
       return listaNub_.slice(inicio);
     return listaNub_.slice(inicio,final);
+  }
+  public getActualInfoOferta(idNubOfertaEmpresa:number):CuentaEmpresa{
+
+    //obtener nub
+    let nubOF:any=listaNub_.find(obj=>obj._idNub ==idNubOfertaEmpresa);
+    //obtener empresa
+    let empresa=this.listaEmpresas_.find(obj=>obj._id ==nubOF._idEmpresa);
+    //obtener oferta
+    let ofertas=empresa?.ofertasPublicadas.slice();
+    let ofertaActual:any=ofertas?.find(obj=>obj._id ==nubOF._idOferta);
+
+    let empresaRetorno:any = JSON.parse( JSON.stringify( empresa ) );
+    empresaRetorno?.ofertasPublicadas.splice(0,empresa?.ofertasPublicadas.length);
+    empresaRetorno?.ofertasPublicadas.push(ofertaActual);
+
+    let dataEmpresaOferta:CuentaEmpresa=JSON.parse( JSON.stringify( empresaRetorno ) );
+    return dataEmpresaOferta;
+
   }
 }
 

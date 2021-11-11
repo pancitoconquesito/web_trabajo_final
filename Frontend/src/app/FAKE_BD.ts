@@ -3,6 +3,8 @@ import {OfertaLaboral} from './models/oferta_laboral.model';
 import {nub_OfertaEmpresa} from './models/nub_oferta_empresa_model';
 import {dv_CardOferta} from './models/dv_card_oferta.model';
 import {dv_OfertaActual} from './models/dv_oferta_actual.model';
+import { Curso } from './models/curso.model';
+import { CursosID } from './models/cursosID.models';
 
 // lista de cuenta listaEmpresas_, dentro de cada una hay una lista de sus publicaciones
 export let listaEmpresas_:Array<CuentaEmpresa>=[
@@ -23,7 +25,9 @@ export let listaEmpresas_:Array<CuentaEmpresa>=[
                 ciudad:'Santiago',
                 fechaPublicacion: '01-01-2000',
                 tipoJornada:'Tiempo completo',
-                fk_idEmpresa:1
+                fk_idEmpresa:1,
+                correo_contacto_reclutar:'contacto.cocacola@gmail.com',
+                telefono_contacto_laboral:123456789
             },
             {
                 _id:2,
@@ -33,7 +37,9 @@ export let listaEmpresas_:Array<CuentaEmpresa>=[
                 ciudad:'Osorno',
                 fechaPublicacion:'01-01-2000',
                 tipoJornada:'Tiempo parcial',
-                fk_idEmpresa:1
+                fk_idEmpresa:1,
+                correo_contacto_reclutar:'contacto.cocacola@gmail.com',
+                telefono_contacto_laboral:123456789
             },
         ]
     },
@@ -54,7 +60,9 @@ export let listaEmpresas_:Array<CuentaEmpresa>=[
                 ciudad:'Cali',
                 fechaPublicacion:'01-01-2000',
                 tipoJornada:'Por horas',
-                fk_idEmpresa:2
+                fk_idEmpresa:2,
+                correo_contacto_reclutar:'contacto.nintendo@gmail.com',
+                telefono_contacto_laboral:123456789
             },
             {
                 _id:4,
@@ -64,7 +72,9 @@ export let listaEmpresas_:Array<CuentaEmpresa>=[
                 ciudad:'Arica',
                 fechaPublicacion:'01-01-2000',
                 tipoJornada:'Tiempo parcial',
-                fk_idEmpresa:2
+                fk_idEmpresa:2,
+                correo_contacto_reclutar:'contacto.nintendo@gmail.com',
+                telefono_contacto_laboral:123456789
             },
         ]
     },   
@@ -91,4 +101,81 @@ export let listaNub_:Array<nub_OfertaEmpresa>=[
         _idOferta:3,
         _idEmpresa:2
     },
+];
+
+
+
+
+
+//////////             CURSOS           /////////////////////
+
+export let listaCursos:Array<Curso>=[
+    {
+        id:0,
+        img:"https://i.imgur.com/iI8htRg.jpg",
+        titulo:'C++',
+        cantModulos:3,
+        duracion:150,//o time?,
+        tematica:'Programacion',
+        modulos:[
+            {
+                img:"img",
+                titulo:'Hola mundo',
+                descripcion:'descripcion del hola mundo',
+                duracion:50,
+                urlVideo:''//string???
+            },
+            {
+                img:'img',
+                titulo:'memoria dinamica',
+                descripcion:'descripcion de memoria dinamica',
+                duracion:100,
+                urlVideo:''//string???
+            },
+            {
+                img:'img',
+                titulo:'arboles binarios',
+                descripcion:'descripcion de arboles binarios',
+                duracion:100,
+                urlVideo:''//string???
+            }
+        ]
+    },
+    {
+        id:1,
+        img:"https://besthqwallpapers.com/Uploads/26-1-2018/38416/thumb2-french-mastiff-4k-puppy-pets-dogs.jpg",
+        titulo:'Unity',
+        cantModulos:3,
+        duracion:200,//o time?,
+        tematica:'Diseño',
+        modulos:[
+            {
+                img:'img',
+                titulo:'gameobjet y componentes',
+                descripcion:'descripcion gameobjet y componentes',
+                duracion:50,
+                urlVideo:''//string???
+            },
+            {
+                img:'img',
+                titulo:'memoria, scenes y camaras',
+                descripcion:'descripcion memoria, scenes y camaras',
+                duracion:100,
+                urlVideo:''//string???
+            },
+            {
+                img:'img',
+                titulo:'scriptable objets y arquitectura',
+                descripcion:'descripcion de scriptable objets y arquitectura',
+                duracion:50,
+                urlVideo:''//string???
+            }
+        ]
+    }
+];
+
+
+export let listaCursosID:Array<CursosID>=[
+    {idCurso:1},
+    { idCurso:0}
 ];

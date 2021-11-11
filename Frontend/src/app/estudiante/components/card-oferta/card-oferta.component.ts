@@ -10,6 +10,7 @@ import { dv_CardOferta } from 'src/app/models/dv_card_oferta.model';
 export class CardOfertaComponent implements OnInit {
 
   @Input() lista_dv_cardOferta:dv_CardOferta;
+  @Input() idEmpresa:number=0;
 
   constructor(private router:Router) {
     this.lista_dv_cardOferta={
@@ -21,7 +22,6 @@ export class CardOfertaComponent implements OnInit {
       fechaPublicacion:'',
       imgEmpresa:''
     };
-
    }
 
   ngOnInit(): void {

@@ -6,6 +6,8 @@ import { InicioScreensComponent } from '../estudiante/screens/inicio-screens/ini
 import { OfertasScreenComponent } from '../estudiante/screens/ofertas-screen/ofertas-screen.component';
 import {VisitanteComponent} from '../visitante/visitante.component';
 import{CertificadosScreenComponent}from '../estudiante/screens/certificados-screen/certificados-screen.component';
+import { CursoActualScreenComponent } from '../estudiante/screens/curso-actual-screen/curso-actual-screen.component';
+import { OfertaActualScreenComponent } from '../estudiante/screens/oferta-actual-screen/oferta-actual-screen.component';
 
 const routes: Routes = [
   {path:'', redirectTo:"/login", pathMatch:'full'},
@@ -16,7 +18,9 @@ const routes: Routes = [
         {path:'inicio', component:InicioScreensComponent},
         {path:'certificados', component:CertificadosScreenComponent},
         {path:'cursos', component:CursosScreenComponent},
-        {path:'ofertas', component:OfertasScreenComponent}
+        {path:'ofertas', component:OfertasScreenComponent},
+        {path:'cursos/:nombre/:id', component:CursoActualScreenComponent},
+        {path:'ofertas/:nombre/:idNUBOfertaEmpresa', component:OfertaActualScreenComponent}
       ]
   }
 ];

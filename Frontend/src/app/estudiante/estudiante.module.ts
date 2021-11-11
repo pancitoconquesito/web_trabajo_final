@@ -10,18 +10,20 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SharedModule } from '../shared/shared.module';
 import { InicioScreensComponent } from './screens/inicio-screens/inicio-screens.component';
 import { CursosScreenComponent } from './screens/cursos-screen/cursos-screen.component';
-import { importType } from '@angular/compiler/src/output/output_ast';
 import { OfertasScreenComponent } from './screens/ofertas-screen/ofertas-screen.component';
 import { OfertaActualScreenComponent } from './screens/oferta-actual-screen/oferta-actual-screen.component';
 import { CursoActualScreenComponent } from './screens/curso-actual-screen/curso-actual-screen.component';
 import { CertificadosScreenComponent } from './screens/certificados-screen/certificados-screen.component';
 import { CardOfertaComponent } from './components/card-oferta/card-oferta.component';
+import { CardCursoComponent } from './components/card-curso/card-curso.component';
+import { CantModulosCursoPipe } from '../pipes/cantModulosCurso/cant-modulos-curso.pipe';
+import { MinutosParseHrMinPipe } from '../pipes/minutosParseHrMin/minutos-parse-hr-min.pipe';
+import { FormsModule } from '@angular/forms';
+import { FiltroCursosPipe } from '../pipes/filtroCursos/filtro-cursos.pipe';
 
 
-@NgModule({
-  declarations: [
+const COMPONENTES=[
     EstudianteComponent,
-    // InicioComponent,
     NavbarComponent,
     InicioScreensComponent,
     CursosScreenComponent,
@@ -29,12 +31,25 @@ import { CardOfertaComponent } from './components/card-oferta/card-oferta.compon
     OfertaActualScreenComponent,
     CursoActualScreenComponent,
     CertificadosScreenComponent,
-    CardOfertaComponent
+    CardOfertaComponent,
+    CardCursoComponent
+];
+
+@NgModule({
+  declarations: [
+    
+    ...COMPONENTES,
+    CantModulosCursoPipe,
+    MinutosParseHrMinPipe,
+    FiltroCursosPipe
+    
   ],
   imports: [
     CommonModule,
     EstudianteRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
+    
   ]
 })
 export class EstudianteModule { }

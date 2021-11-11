@@ -11,8 +11,8 @@ import {OfertaActualScreenComponent} from './screens/oferta-actual-screen/oferta
 import {CursoActualScreenComponent} from './screens/curso-actual-screen/curso-actual-screen.component';
 const routes: Routes = [
   // {path:'inicioEstudiante/cursos/curso-actual/:id', component:CursoActualScreenComponent}
-  {path:'inicioEstudiante/cursos/:nombre/:id', component:CursoActualScreenComponent},
-  {path:'inicioEstudiante/ofertas/:nombre/:id', component:OfertaActualScreenComponent}
+  // {path:'inicioEstudiante/cursos/:nombre/:id', component:CursoActualScreenComponent},
+  // {path:'inicioEstudiante/ofertas/:nombre/:idNUBOfertaEmpresa', component:OfertaActualScreenComponent}
 ];
 
 @NgModule({

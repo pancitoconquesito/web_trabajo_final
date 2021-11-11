@@ -7,6 +7,5 @@ export interface CuentaEmpresa{
     telefono:number;
     descripcionEmpresa:string;
     imgEmpresa:string;//img??
-    
     ofertasPublicadas:Array<OfertaLaboral>;
 }

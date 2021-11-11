@@ -7,4 +7,6 @@ export interface OfertaLaboral{
     fechaPublicacion:string;
     tipoJornada:string;// si hay tiempo promover a number, TODO
     fk_idEmpresa:number;
+    correo_contacto_reclutar:string;
+    telefono_contacto_laboral:number;
 }
