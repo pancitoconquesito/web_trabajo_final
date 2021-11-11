@@ -33,6 +33,10 @@
             <div class="m-4">
                 <h3 class="my-3">Duración</h3>
                 <div class="form-check">
+                    <input (click)="changeDuracionModulo()" class="form-check-input" type="checkbox" value="" id="uno_modulo">
+                    <label class="form-check-label" for="uno_modulo">1 Módulo</label>
+                </div>
+                <div class="form-check">
                     <input (click)="changeDuracionModulo()" class="form-check-input" type="checkbox" value="" id="dos_modulos">
                     <label class="form-check-label" for="dos_modulos">2 Módulos</label>
                 </div>
@@ -57,16 +61,13 @@
                 <div class="row my-5 justify-content-center">
                     
                     <div class="col-8 col-lg-5 mx-1" 
-                    *ngFor="let curso of lista_cursos | filtroCursos:filtro.duracion2:filtro.duracion3:filtro.duracion4:filtro.duracionMas
+                    *ngFor="let curso of lista_cursos | filtroCursos:filtro.duracion1:filtro.duracion2:filtro.duracion3:filtro.duracion4:filtro.duracionMas
                     :filtro.temaProg:filtro.temaDiseno:filtro.temaHumanidades"><!-- pipe filtro, pipe inicio, final y paginacion-->
                         <!-- card -->
                         <app-card-curso [curso]=curso></app-card-curso>
                     </div>
-                    
                 </div><!-- fin lista card -->
 
-
-                {{filtro.duracion2}}
             </div>
             
         </div>

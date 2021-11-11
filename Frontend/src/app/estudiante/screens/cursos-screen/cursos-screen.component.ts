@@ -16,9 +16,10 @@ export class CursosScreenComponent implements OnInit {
 
   textFiltro:string='...';
   temaProg:any;temaDiseno:any;temaHumanidades:any;
-  mod2:any;mod3:any;mod4:any;modMas:any;
+  mod1:any;mod2:any;mod3:any;mod4:any;modMas:any;
   constructor(private servicioCurso:CursoService) {
     this.filtro={
+      duracion1:false,
       duracion2:false,
       duracion3:false,
       duracion4:false,
@@ -31,6 +32,7 @@ export class CursosScreenComponent implements OnInit {
 
   ngOnInit(): void {
     this.lista_cursos=this.servicioCurso.getAllCursos();
+    this.mod1=document.getElementById("uno_modulo");
     this.mod2=document.getElementById("dos_modulos");
     this.mod3=document.getElementById("tres_modulos");
     this.mod4=document.getElementById("cuatro_modulos");
@@ -45,6 +47,7 @@ export class CursosScreenComponent implements OnInit {
     this.filtro.temaHumanidades=this.temaHumanidades.checked;
   }
   changeDuracionModulo(){
+    this.filtro.duracion1=this.mod1.checked;
     this.filtro.duracion2=this.mod2.checked;
     this.filtro.duracion3=this.mod3.checked;
     this.filtro.duracion4=this.mod4.checked;

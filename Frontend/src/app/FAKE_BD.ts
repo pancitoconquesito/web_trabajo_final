@@ -116,7 +116,7 @@ export let listaCursos:Array<Curso>=[
         titulo:'C++',
         cantModulos:3,
         duracion:150,//o time?,
-        tematica:'Programacion',
+        tematica:'Programación',
         modulos:[
             {
                 img:"img",
