@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { EstudianteModule } from './estudiante/estudiante.module';
 import { PublicadorOfertaModule} from './publicador-oferta/publicador-oferta.module';
 import { VisitanteModule } from './visitante/visitante.module';
+import {HttpClientModule} from '@angular/common/http';
 
 const MODULOS=[
   VisitanteModule,
@@ -21,7 +22,7 @@ const MODULOS=[
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    HttpClientModule,
     ...MODULOS
   ],
   providers: [],
