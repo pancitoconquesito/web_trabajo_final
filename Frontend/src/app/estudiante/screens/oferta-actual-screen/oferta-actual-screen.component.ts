@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CuentaEmpresa } from 'src/app/models/cuenta_empresa.model';
-import { dv_OfertaActual } from 'src/app/models/dv_oferta_actual.model';
 import { OfertaService } from 'src/app/services/oferta/oferta.service';
 
 @Component({

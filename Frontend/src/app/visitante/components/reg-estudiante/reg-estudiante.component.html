@@ -1,6 +1,6 @@
 <div class="container">
     <form [formGroup]="formulario"
-    (ngSubmit)="validar()"
+    (ngSubmit)="validarFormulario()"
     novalidate
     class="">
 
@@ -9,19 +9,21 @@
                 <!-- nombres -->
                 <div class="col">
                     <input type="text" class="form-control" formControlName="nombres"
-                    placeholder="Nombres">
+                    placeholder="Nombres  (entre 10 y 30 caracteres)">
                     <div *ngIf="formulario.controls['nombres'].invalid && (formulario.controls['nombres'].touched || formulario.controls['nombres'].dirty)" 
                     class="alert alert-danger">
                         <div *ngIf="formulario.controls['nombres'].hasError('required')">Campo es obligatorio</div>
+                        <div *ngIf="formulario.controls['nombres'].hasError('minlength') || formulario.controls['nombres'].hasError('maxlength')">debe contener entre 10 y 30 caracteres</div>
                     </div>
                 </div>
                 <!-- apellidos -->
                 <div class="col">
                     <input type="text" class="form-control" formControlName="apellidos"
-                    placeholder="Apellidos">
+                    placeholder="Apellidos  (entre 10 y 30 caracteres)">
                     <div *ngIf="formulario.controls['apellidos'].invalid && (formulario.controls['apellidos'].touched || formulario.controls['apellidos'].dirty)" 
                     class="alert alert-danger">
                         <div *ngIf="formulario.controls['apellidos'].hasError('required')">Campo es obligatorio</div>
+                        <div *ngIf="formulario.controls['apellidos'].hasError('minlength') || formulario.controls['apellidos'].hasError('maxlength')">debe contener entre 10 y 30 caracteres</div>
                     </div>
                 </div>
             </div>
@@ -32,19 +34,21 @@
                 <!-- email -->
                 <div class="col">
                     <input type="email" class="form-control" formControlName="email"
-                    placeholder="Email">
+                    placeholder="Email (entre 10 y 30 caracteres)">
                     <div *ngIf="formulario.controls['email'].invalid && (formulario.controls['email'].touched || formulario.controls['email'].dirty)" 
                     class="alert alert-danger">
                         <div *ngIf="formulario.controls['email'].hasError('required')">Campo es obligatorio</div>
+                        <div *ngIf="formulario.controls['email'].hasError('email')">Formato incorrecto</div>
+                        <div *ngIf="formulario.controls['email'].hasError('minlength') || formulario.controls['email'].hasError('maxlength')">debe contener entre 10 y 30 caracteres</div>
                     </div>
                 </div>
                 <!-- pais -->
                 <div class="col">
-                    <select class="form-select" aria-label="asdf"
+                    <select (change)="selectPais()" class="form-select" aria-label="asdf"
                     formControlName="pais">
                         <option selected value=0 >- Selecciona tu País -</option>
                         <option value="1">Chile</option>
-                        <option value="2">Argentina</option>
+                        <option value="2">Colombia</option>
                     </select>
                 </div>
             </div>
@@ -56,10 +60,12 @@
                 <!-- contrasena -->
                 <div class="col">
                     <input type="password" class="form-control" formControlName="contrasena"
-                    placeholder="Contraseña">
+                    placeholder="Contraseña entre 5-10 caracteres">
                     <div *ngIf="formulario.controls['contrasena'].invalid && (formulario.controls['contrasena'].touched || formulario.controls['contrasena'].dirty)" 
                     class="alert alert-danger">
                         <div *ngIf="formulario.controls['contrasena'].hasError('required')">Campo es obligatorio</div>
+                        <div *ngIf="formulario.controls['contrasena'].hasError('minlength') || 
+                        formulario.controls['contrasena'].hasError('maxlength')">El largo debe ser entre 5 y 10 caracteres</div>
                     </div>
                 </div>
                 <!-- ciudad -->
@@ -67,7 +73,7 @@
                     <select class="form-select" aria-label="asdf"
                     formControlName="ciudad">
                         <option selected value=0 >- Selecciona tu Ciudad -</option>
-                        <!-- <option value="1">Chile</option> -->
+                        <option value={{item}} *ngFor="let item of listaCiudadActual">{{item}}</option> 
                     </select>
                 </div>
             </div>
@@ -76,43 +82,33 @@
 
         <div class="d-flex justify-content-center">
             <div class="row mb-4">
-                <!-- cc -->
+                <!-- cc_reg -->
                 <div class="col">
-                    <div class="input-group mb-3">
-                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" 
-                        data-bs-toggle="dropdown" aria-expanded="false"
-                        formControlName="cc_reg" ngDefaultControl>C.C.</button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" >a</a></li>
-                          <li><a class="dropdown-item" >b</a></li>
-                          <li><a class="dropdown-item" >c</a></li>
-                        </ul>
-                        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                    <input type="text" class="form-control" formControlName="cc_reg"
+                    placeholder="cc">
+                    <div *ngIf="formulario.controls['cc_reg'].invalid && (formulario.controls['cc_reg'].touched || formulario.controls['cc_reg'].dirty)" 
+                    class="alert alert-danger">
+                        <div *ngIf="formulario.controls['cc_reg'].hasError('required')">Campo es obligatorio</div>
                     </div>
-
-                   
                 </div>
+
                 <!-- telefono -->
                 <div class="col">
-                    <div class="input-group mb-3">
-                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" 
-                        data-bs-toggle="dropdown" aria-expanded="false"
-                        formControlName="telefono"
-                        ngDefaultControl>Teléfono</button>
-                        <ul class="dropdown-menu" >
-                          <li><a (click)="funcionTest()" class="dropdown-item">a</a></li>
-                          <li><a (click)="funcionTest()" class="dropdown-item">b</a></li>
-                          <li><a (click)="funcionTest()" class="dropdown-item">c</a></li> 
-                        </ul>
-                        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                    <input type="text" class="form-control" formControlName="telefono"
+                    placeholder="Teléfono cantidad de digitos entre 5 y 15">
+                    <div *ngIf="formulario.controls['telefono'].invalid && (formulario.controls['telefono'].touched || formulario.controls['telefono'].dirty)" 
+                    class="alert alert-danger">
+                        <div *ngIf="formulario.controls['telefono'].hasError('required')">Campo es obligatorio</div>
+                        <div *ngIf="formulario.controls['telefono'].hasError('pattern')">Formato incorrecto</div>
                     </div>
-               
                 </div>
+
+
             </div>
         </div>
 
         <hr>
-        <p class="text-center">Sube aquí tu CV en formato pdf (opcional)</p>
+        <!-- <p class="text-center">Sube aquí tu CV en formato pdf (opcional)</p>
 
         <div class="d-flex justify-content-center">
             <div class="row d-flex justify-content-center">
@@ -121,7 +117,7 @@
                 </button>
     
             </div>
-        </div>
+        </div> -->
 
 
         <div class="text-center my-3">
@@ -132,9 +128,3 @@
 
     </form>
 </div>
-
-
-<p>
-
-    {{test}}
-</p>

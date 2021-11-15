@@ -6,4 +6,5 @@ export interface dv_CardOferta{
     ciudad:string;
     fechaPublicacion:string;
     imgEmpresa:string;
+    //para filtros: jornada, salario?
 }

@@ -14,15 +14,19 @@ export class CursoService {
   }
   public getAllCursos():Array<Curso>{
     let _listaIDCursos_real=this.getAllListaIDCursos();
-
     let listaCursos_real:Array<Curso>=listaCursos;
     let listaCursosRetorno:Array<Curso>=[];
-
     _listaIDCursos_real.forEach((valor, índice) => {
       //obtengo cada igual find, con id iguales
       let cursoEncontrado:any=listaCursos_real.find(obj=>obj.id==valor.idCurso);
       listaCursosRetorno.push(cursoEncontrado);
     });
     return listaCursosRetorno;
+  }
+
+
+  getCurso(idCurso:number):Curso{
+    let cursoRetorno:any=listaCursos.find(x=>x.id==idCurso);
+    return cursoRetorno;
   }
 }

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Curso } from 'src/app/models/curso.model';
 import { FiltroCurso } from 'src/app/models/filtroCurso.model';
 import { CursoService } from 'src/app/services/curso/curso.service';
+import { EstudianteService } from 'src/app/services/estudiante/estudiante.service';
 @Component({
   selector: 'app-cursos-screen',
   templateUrl: './cursos-screen.component.html',
@@ -10,6 +11,8 @@ import { CursoService } from 'src/app/services/curso/curso.service';
 })
 export class CursosScreenComponent implements OnInit {
 
+  //idEstudiante:number;
+  //
   lista_cursos:Array<Curso>=[];
   filtro_cantModulos:number=0;
   filtro:FiltroCurso;
@@ -17,7 +20,7 @@ export class CursosScreenComponent implements OnInit {
   textFiltro:string='...';
   temaProg:any;temaDiseno:any;temaHumanidades:any;
   mod1:any;mod2:any;mod3:any;mod4:any;modMas:any;
-  constructor(private servicioCurso:CursoService) {
+  constructor(private servicioCurso:CursoService, private rutaparam:ActivatedRoute, private s_estudiante:EstudianteService) {
     this.filtro={
       duracion1:false,
       duracion2:false,
@@ -28,6 +31,10 @@ export class CursosScreenComponent implements OnInit {
       temaDiseno:false,
       temaHumanidades:false
       }
+      // this.rutaparam.params.subscribe(param=>{
+      //   console.log(param);
+      // });
+      // this.idEstudiante=Number(this.s_estudiante.getLS_loginEstudiante());
    }
 
   ngOnInit(): void {

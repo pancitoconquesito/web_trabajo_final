@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row">
+    <div class="row alturaMax">
         <!-- parte principal -->
         <div class="col-sm-12 col-lg-8 colorSideA">
             <!-- parte principal -->
@@ -31,7 +31,7 @@
         <div class="col-sn-12 col-lg-4 colorSideB" >
             <div class="container">
                 <div class="row my-3">
-                        <img src="..." alt="logo empresa">
+                        <img src={{dataEmpresaOferta.imgEmpresa}} alt="{{dataEmpresaOferta.nombreEmpresa}} ">
                 </div>
                 <div class="row">
                         <small>{{dataEmpresaOferta.nombreEmpresa}} | {{dataEmpresaOferta.ofertasPublicadas[0].pais}}, {{dataEmpresaOferta.ofertasPublicadas[0].ciudad}}</small>
@@ -45,7 +45,7 @@
                 <div class="row my-3">
                     <p>{{dataEmpresaOferta.descripcionEmpresa}}</p>
                 </div>
-                <div class="row">
+                <div class="row my-4">
                     <button class="py-3 rounded"><i class="far fa-bell me-3"></i>Recibir Notificaciones</button>
                 </div>
             </div>

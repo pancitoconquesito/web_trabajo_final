@@ -8,6 +8,8 @@ import {VisitanteComponent} from '../visitante/visitante.component';
 import{CertificadosScreenComponent}from '../estudiante/screens/certificados-screen/certificados-screen.component';
 import { CursoActualScreenComponent } from '../estudiante/screens/curso-actual-screen/curso-actual-screen.component';
 import { OfertaActualScreenComponent } from '../estudiante/screens/oferta-actual-screen/oferta-actual-screen.component';
+import { CursoDescripcionScreenComponent } from '../estudiante/screens/curso-descripcion-screen/curso-descripcion-screen.component';
+import { ConfiguracionComponent } from '../estudiante/screens/configuracion/configuracion.component';
 
 const routes: Routes = [
   {path:'', redirectTo:"/login", pathMatch:'full'},
@@ -16,11 +18,13 @@ const routes: Routes = [
     ,children:[
         {path:'', redirectTo:"inicio", pathMatch:'full'},
         {path:'inicio', component:InicioScreensComponent},
+        {path:'configuracion', component:ConfiguracionComponent},
         {path:'certificados', component:CertificadosScreenComponent},
         {path:'cursos', component:CursosScreenComponent},
+        {path:'cursos/:nombreCurso/:idCurso', component:CursoActualScreenComponent},
+        {path:'cursos/preview/:nombreCurso/:idCurso', component:CursoDescripcionScreenComponent},
         {path:'ofertas', component:OfertasScreenComponent},
-        {path:'cursos/:nombre/:id', component:CursoActualScreenComponent},
-        {path:'ofertas/:nombre/:idNUBOfertaEmpresa', component:OfertaActualScreenComponent}
+        {path:'ofertas/:nombreCurso/:idNUBOfertaEmpresa', component:OfertaActualScreenComponent}
       ]
   }
 ];

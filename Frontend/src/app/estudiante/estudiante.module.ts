@@ -20,7 +20,10 @@ import { CantModulosCursoPipe } from '../pipes/cantModulosCurso/cant-modulos-cur
 import { MinutosParseHrMinPipe } from '../pipes/minutosParseHrMin/minutos-parse-hr-min.pipe';
 import { FormsModule } from '@angular/forms';
 import { FiltroCursosPipe } from '../pipes/filtroCursos/filtro-cursos.pipe';
-
+import { CursoDescripcionScreenComponent } from './screens/curso-descripcion-screen/curso-descripcion-screen.component';
+import { CardModuloDescripcionComponent } from './components/card-modulo-descripcion/card-modulo-descripcion.component';
+import { ConfiguracionComponent } from './screens/configuracion/configuracion.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const COMPONENTES=[
     EstudianteComponent,
@@ -32,24 +35,28 @@ const COMPONENTES=[
     CursoActualScreenComponent,
     CertificadosScreenComponent,
     CardOfertaComponent,
-    CardCursoComponent
+    CardCursoComponent,
+    CursoDescripcionScreenComponent,
+    CardModuloDescripcionComponent,
+    ConfiguracionComponent
 ];
 
 @NgModule({
   declarations: [
-    
     ...COMPONENTES,
     CantModulosCursoPipe,
     MinutosParseHrMinPipe,
-    FiltroCursosPipe
+    FiltroCursosPipe,
+    
+    
     
   ],
   imports: [
     CommonModule,
     EstudianteRoutingModule,
     SharedModule,
-    FormsModule
-    
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class EstudianteModule { }

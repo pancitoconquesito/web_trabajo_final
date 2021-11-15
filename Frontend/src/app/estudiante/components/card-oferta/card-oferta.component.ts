@@ -26,7 +26,7 @@ export class CardOfertaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  enter_oferta(nombreEmpresa:string, idNubOfertaEmpresa:number):void{
-    this.router.navigate(['/inicioEstudiante/ofertas/'+nombreEmpresa+'/'+idNubOfertaEmpresa]);
-  }
+  // enter_oferta(nombreEmpresa:string, idNubOfertaEmpresa:number):void{
+  //   this.router.navigate(['/inicioEstudiante/:id/ofertas/'+nombreEmpresa+'/'+idNubOfertaEmpresa]);
+  // }
 }

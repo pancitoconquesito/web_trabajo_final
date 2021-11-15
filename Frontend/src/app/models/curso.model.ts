@@ -8,6 +8,7 @@ export interface Curso{
     cantModulos:number;
     duracion:number;//en minutos, o time?
     tematica:string;
+    descripcionGeneral:string;
     modulos:Array<ModuloCurso>;
 }
 
