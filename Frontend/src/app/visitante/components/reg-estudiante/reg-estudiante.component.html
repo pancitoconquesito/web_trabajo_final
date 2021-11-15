@@ -5,9 +5,9 @@
     class="">
 
         <div class="d-flex justify-content-center">
-            <div class="row mb-4">
+            <div class="row ">
                 <!-- nombres -->
-                <div class="col">
+                <div class="col-md-12 col-lg-6 my-3">
                     <input type="text" class="form-control" formControlName="nombres"
                     placeholder="Nombres  (entre 10 y 30 caracteres)">
                     <div *ngIf="formulario.controls['nombres'].invalid && (formulario.controls['nombres'].touched || formulario.controls['nombres'].dirty)" 
@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <!-- apellidos -->
-                <div class="col">
+                <div class="col-md-12 col-lg-6 my-3">
                     <input type="text" class="form-control" formControlName="apellidos"
                     placeholder="Apellidos  (entre 10 y 30 caracteres)">
                     <div *ngIf="formulario.controls['apellidos'].invalid && (formulario.controls['apellidos'].touched || formulario.controls['apellidos'].dirty)" 
@@ -30,9 +30,9 @@
         </div>
 
         <div class="d-flex justify-content-center">
-            <div class="row mb-4">
+            <div class="row ">
                 <!-- email -->
-                <div class="col">
+                <div class="col-md-12 col-lg-6 my-3">
                     <input type="email" class="form-control" formControlName="email"
                     placeholder="Email (entre 10 y 30 caracteres)">
                     <div *ngIf="formulario.controls['email'].invalid && (formulario.controls['email'].touched || formulario.controls['email'].dirty)" 
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <!-- pais -->
-                <div class="col">
+                <div class="col-md-12 col-lg-6 my-3">
                     <select (change)="selectPais()" class="form-select" aria-label="asdf"
                     formControlName="pais">
                         <option selected value=0 >- Selecciona tu País -</option>
@@ -56,9 +56,9 @@
 
 
         <div class="d-flex justify-content-center">
-            <div class="row mb-4">
+            <div class="row ">
                 <!-- contrasena -->
-                <div class="col">
+                <div class="col-md-12 col-lg-6 my-3">
                     <input type="password" class="form-control" formControlName="contrasena"
                     placeholder="Contraseña entre 5-10 caracteres">
                     <div *ngIf="formulario.controls['contrasena'].invalid && (formulario.controls['contrasena'].touched || formulario.controls['contrasena'].dirty)" 
@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <!-- ciudad -->
-                <div class="col">
+                <div class="col-md-12 col-lg-6 my-3">
                     <select class="form-select" aria-label="asdf"
                     formControlName="ciudad">
                         <option selected value=0 >- Selecciona tu Ciudad -</option>
@@ -81,9 +81,9 @@
 
 
         <div class="d-flex justify-content-center">
-            <div class="row mb-4">
+            <div class="row">
                 <!-- cc_reg -->
-                <div class="col">
+                <div class="col-md-12 col-lg-6 my-3">
                     <input type="text" class="form-control" formControlName="cc_reg"
                     placeholder="cc">
                     <div *ngIf="formulario.controls['cc_reg'].invalid && (formulario.controls['cc_reg'].touched || formulario.controls['cc_reg'].dirty)" 
@@ -93,7 +93,7 @@
                 </div>
 
                 <!-- telefono -->
-                <div class="col">
+                <div class="col-md-12 col-lg-6 my-3">
                     <input type="text" class="form-control" formControlName="telefono"
                     placeholder="Teléfono cantidad de digitos entre 5 y 15">
                     <div *ngIf="formulario.controls['telefono'].invalid && (formulario.controls['telefono'].touched || formulario.controls['telefono'].dirty)" 
